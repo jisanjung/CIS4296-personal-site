@@ -17,28 +17,9 @@
       crossorigin="anonymous"
     />
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.3/dist/iconify-icon.min.js"></script>
-
-    <!-- Remove this and fill in your name & photo in the required areas -->
-    <script>
-      fetch('https://randomuser.me/api/?inc=name,picture')
-        .then((response) => response.json())
-        .then(({ results }) => results[0])
-        .then(({ name, picture }) => {
-          document.querySelector('#name').innerText = name.first
-          document.querySelector(
-            '.navbar-brand'
-          ).innerText = `${name.first} ${name.last}`
-          document.title = `${name.first} ${name.last} Personal Site`
-          document.querySelector('#profilepic').src = picture.large
-        })
-    </script>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
     <link href="styles/theme.css" rel="stylesheet" />
     <link href="styles/styles.css" rel="stylesheet" />
 
@@ -63,22 +44,22 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
+          <ul class="nav nav-pills py-2">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#home">Home</a>
+              <a class="nav-link text-white" aria-current="page" href="#home">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#projects"
+              <a class="nav-link text-white" aria-current="page" href="#projects"
                 >Projects</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#courses"
+              <a class="nav-link text-white" aria-current="page" href="#courses"
                 >Courses</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#contact"
+              <a class="nav-link active bg-primary text-white border border-white" aria-current="page" href="#contact"
                 >Contact</a
               >
             </li>
@@ -99,13 +80,14 @@
           class="rounded-circle"
           draggable="false"
           id="profilepic"
+          src="images/memoji.png"
         />
       </div>
       <div class="row mx-auto">
         <h4 class="h1 font-weight-bold mx-auto text-center">
           <!-- Set Name Here -->
           Hi <iconify-icon icon="twemoji:waving-hand"></iconify-icon> I'm
-          <span id="name"></span>!
+          <span id="name">Jason Jung</span>!
         </h4>
       </div>
       <div class="row mx-auto">
@@ -199,6 +181,28 @@
         ></a>
       </div>
     </div>
+    <div class="container section min-vh-100 d-flex justify-content-center flex-column align-items-center pt-5"
+    id="home">
+      <div class="row mx-auto">
+        <h4 class="h1 font-weight-bold mx-auto text-center">About Me</h4>
+      </div>
+      <div class="row mx-auto">
+        <h5 class="h5 mx-auto text-opacity-75 text-primary text-center mb-4">
+          A little bit about myself.
+        </h5>
+      </div>
+      <div class="d-flex mt-3">
+        <h5 class="w-50 p-3 lh-lg">
+          The ability to adapt to different environments is a key skill, especially in software development. Because of this, I have grown a passion for learning up-to-date technologies and developing my skills which has opened up many opportunities. Here are some companies and startups I've worked for:
+        </h5>
+        <div class="w-50 p-3">
+          <img src="images/equisearch.png" width="191px" class="m-4"/>
+          <img src="images/islandnetworks.png" width="191px" class="m-4"/>
+          <img src="images/iconplc.png" width="191px" class="m-4"/>
+          <img src="images/paypal.png" width="191px" class="m-4"/>
+        </div>
+      </div>
+    </div>
     <div
       class="container section min-vh-100 d-flex justify-content-center flex-column align-items-center"
       id="projects"
@@ -211,47 +215,62 @@
           I've worked on some neat things.
         </h5>
       </div>
-      <div class="row w-100">
-        <h5>Inspiro for Esperanza</h5>
+      <div class="card mb-4">
+        <div class="card-body">
+          <div class="card-title row w-100">
+            <h5>Inspiro for Esperanza</h5>
+          </div>
+          <div class="row w-100 mb-4">
+            <p class="card-text text-justify">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce maximus
+              nisi in neque blandit auctor. Vestibulum pellentesque fringilla nulla
+              quis sagittis. Donec id erat sodales, fringilla est non, vestibulum
+              tellus. Suspendisse potenti. Fusce et dolor blandit, tincidunt eros
+              non, pharetra orci. Donec massa neque, suscipit at purus ac, cursus
+              tincidunt purus. Suspendisse imperdiet massa nec sem dictum luctus.
+              Vestibulum at porta lectus, sed faucibus libero.
+            </p>
+          </div>
+          <a href="#" class="btn btn-primary">See Project</a>
+        </div>
       </div>
-      <div class="row w-100 mb-4">
-        <p class="text-justify">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce maximus
-          nisi in neque blandit auctor. Vestibulum pellentesque fringilla nulla
-          quis sagittis. Donec id erat sodales, fringilla est non, vestibulum
-          tellus. Suspendisse potenti. Fusce et dolor blandit, tincidunt eros
-          non, pharetra orci. Donec massa neque, suscipit at purus ac, cursus
-          tincidunt purus. Suspendisse imperdiet massa nec sem dictum luctus.
-          Vestibulum at porta lectus, sed faucibus libero.
-        </p>
+      <div class="card mb-4">
+        <div class="card-body">
+          <div class="row w-100">
+            <h5>Work From Home Pinterest</h5>
+          </div>
+          <div class="row w-100">
+            <p class="text-justify">
+              Vestibulum vulputate ullamcorper placerat. Fusce bibendum ligula non
+              ex dapibus finibus. Nulla facilisi. Integer eu libero lorem.
+              Pellentesque eget pretium ligula. Donec finibus nibh sed leo dapibus
+              imperdiet. Fusce cursus eu mi sed porttitor. Aliquam eget suscipit
+              dolor, ac mollis risus. Vestibulum commodo turpis nulla, bibendum
+              varius urna dictum porta.
+            </p>
+          </div>
+          <a href="#" class="btn btn-primary">See Project</a>
+        </div>
       </div>
-      <div class="row w-100">
-        <h5>Work From Home Pinterest</h5>
-      </div>
-      <div class="row w-100 mb-4">
-        <p class="text-justify">
-          Vestibulum vulputate ullamcorper placerat. Fusce bibendum ligula non
-          ex dapibus finibus. Nulla facilisi. Integer eu libero lorem.
-          Pellentesque eget pretium ligula. Donec finibus nibh sed leo dapibus
-          imperdiet. Fusce cursus eu mi sed porttitor. Aliquam eget suscipit
-          dolor, ac mollis risus. Vestibulum commodo turpis nulla, bibendum
-          varius urna dictum porta.
-        </p>
-      </div>
-      <div class="row w-100">
-        <h5>Query Dating Site</h5>
-      </div>
-      <div class="row w-100">
-        <p class="text-justify">
-          Fusce egestas lectus ac est porttitor congue. Mauris lacinia pharetra
-          odio ut egestas. Nullam facilisis condimentum consequat. Integer arcu
-          nibh, ullamcorper non fringilla quis, tempus sit amet turpis. Proin ac
-          gravida mi. Ut eros quam, pharetra venenatis pharetra at, porttitor
-          sit amet dolor. Ut et accumsan metus. Phasellus eros diam, tristique a
-          maximus vel, fringilla eu nisl. Pellentesque sed quam non urna dapibus
-          porta in in nibh. Phasellus lobortis nibh est, id pretium orci
-          efficitur at.
-        </p>
+      <div class="card">
+        <div class="card-body">
+          <div class="row w-100">
+            <h5>Query Dating Site</h5>
+          </div>
+          <div class="row w-100">
+            <p class="text-justify">
+              Fusce egestas lectus ac est porttitor congue. Mauris lacinia pharetra
+              odio ut egestas. Nullam facilisis condimentum consequat. Integer arcu
+              nibh, ullamcorper non fringilla quis, tempus sit amet turpis. Proin ac
+              gravida mi. Ut eros quam, pharetra venenatis pharetra at, porttitor
+              sit amet dolor. Ut et accumsan metus. Phasellus eros diam, tristique a
+              maximus vel, fringilla eu nisl. Pellentesque sed quam non urna dapibus
+              porta in in nibh. Phasellus lobortis nibh est, id pretium orci
+              efficitur at.
+            </p>
+          </div>
+          <a href="#" class="btn btn-primary">See Project</a>
+        </div>
       </div>
       <div class="row mt-3 next">
         <a href="#courses" class="col"
@@ -392,6 +411,13 @@
         </div>
       </div>
     </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.3/dist/iconify-icon.min.js"></script>
 
     <script>
       const tooltipTriggerList = document.querySelectorAll(
